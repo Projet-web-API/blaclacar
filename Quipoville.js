@@ -69,11 +69,13 @@ function search(){
 function inverseVille(){
     if(inverser == false){
         inverser = true;
-        document.getElementById("choix").innerHTML="Ville départ";
+        document.getElementById("choix1").innerHTML="Ville arrivé";
+        document.getElementById("choix2").innerHTML="Ville départ";
     }
     else{
         inverser = false;
-        document.getElementById("choix").innerHTML="Ville arrivé";
+        document.getElementById("choix1").innerHTML="Ville départ";
+        document.getElementById("choix2").innerHTML="Ville arrivé";
     }
 }
 
