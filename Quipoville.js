@@ -1,10 +1,7 @@
-var villed = "Peu importe"
-var villea = "Peu importe"
-var theUrl = null
-
-var bouton = document.getElementById("bouton");
-
-
+var villed = "Peu importe";
+var villea = "Peu importe";
+var theUrl = null;
+var inverser = false;
 
 
 function choix(){
@@ -14,15 +11,23 @@ function choix(){
     if(villea == villed){
         alert("veuillez choisir deux villes différentes");
     }
-    else if(villed == "Peu importe"){
-        lancea(villea);
-    }
-    else if(villea == "Peu importe"){
-        lanced(villed);
+    else if(inverser==true){
+        else if(villea == "Peu importe"){
+            lancea(villed);
+        }
+        else{
+            lance(villea, villed);
+        }
     }
     else{
-        lance(villed, villea);
+        else if(villea == "Peu importe"){
+            lanced(villed);
+        }
+        else{
+            lance(villed, villea);
+        }
     }
+    
 }
 
 function lance(villed, villea) {
@@ -53,8 +58,29 @@ function search(){
     var text = ""
     var taille = json['trips'].length
     console.log(taille);
+    var tab = []
     for(i = 0; i < taille; i++){
         text += "Départ = " + json['trips'][i.toString()]['departure_place']['city_name']+",arrivée = " + json['trips'][i.toString()]['arrival_place']['city_name'] + "<br>";
+
     }
     document.getElementById("test").innerHTML = text
+}
+
+function inverseVille(){
+    if(inverser == false){
+        inverser = true;
+        document.getElementById("choix").innerHTML="Ville départ";
+    }
+    else{
+        inverser = false;
+        document.getElementById("choix").innerHTML="Ville arrivé";
+    }
+}
+
+function animation1(){
+    document.getElementById("fleches").src=('fleches2.png');
+}
+
+function animation2(){
+    document.getElementById("fleches").src=('fleches.png');
 }
