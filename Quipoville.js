@@ -12,7 +12,7 @@ function choix(){
         alert("veuillez choisir deux villes différentes");
     }
     else if(inverser==true){
-        else if(villea == "Peu importe"){
+        if(villea == "Peu importe"){
             lancea(villed);
         }
         else{
@@ -20,7 +20,7 @@ function choix(){
         }
     }
     else{
-        else if(villea == "Peu importe"){
+        if(villea == "Peu importe"){
             lanced(villed);
         }
         else{
