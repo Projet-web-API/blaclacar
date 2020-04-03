@@ -113,6 +113,6 @@ function animationp2(i){
 }
 
 function plusInfos(i){
-    console.log("tu as cliqué sur le plus " + i)
-    document.getElementById("texte"+i).innerHTML = "Départ à "+json['trips'][i]['departure_place']['city_name']+", "+json['trips'][i]['departure_place']['address']+" le "+json['trips'][i]['departure_date']+",arrivée = " + json['trips'][i]['arrival_place']['city_name']
+    console.log("tu as cliqué sur le plus " + i + json['links']['_front'])
+    document.getElementById("texte"+i).innerHTML = "Départ à "+json['trips'][i]['departure_place']['city_name']+", "+json['trips'][i]['departure_place']['address']+" le "+json['trips'][i]['departure_date']+", arrivée à " + json['trips'][i]['arrival_place']['city_name']+"<br/> <a href=\""+json['links']['_front']+"\"> Plus...</a>"
 }
